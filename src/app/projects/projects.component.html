@@ -1,0 +1,17 @@
+<div class="homepage-container">
+      <div class="slideshow-container" *ngIf="!isLoading; else loadingTemplate">
+        <img [src]="currentImage" alt="Slideshow Image" class="slideshow-image" />
+      </div>
+      
+      <ng-template #loadingTemplate>
+        <div class="loading-spinner">
+          Loading...
+        </div>
+      </ng-template>
+
+  
+    <footer class="footer" id="footerSection">
+      <p>© 2024 Cocotownrealtors. All rights reserved.</p>
+    </footer>
+  </div>
+  
