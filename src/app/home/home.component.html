@@ -1,17 +1,10 @@
-<div class="homepage-container">
-      <div class="slideshow-container" *ngIf="!isLoading; else loadingTemplate">
-        <img [src]="currentImage" alt="Slideshow Image" class="slideshow-image" />
+<div class="container">
+    <h1>All Blog Posts</h1>
+    <div *ngFor="let post of posts" class="card my-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content | slice: 0:100 }}...</p>
+        <a [routerLink]="['/post', post.id]" class="btn btn-primary">Read More</a>
       </div>
-      
-      <ng-template #loadingTemplate>
-        <div class="loading-spinner">
-          Loading...
-        </div>
-      </ng-template>
-
-  
-    <footer class="footer" id="footerSection">
-      <p>© 2024 Cocotownrealtors. All rights reserved.</p>
-    </footer>
+    </div>
   </div>
-  

@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <h2>Dashboard</h2>
+    <form (submit)="onAddOrUpdatePost()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="title"
+          name="title"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea
+          class="form-control"
+          id="content"
+          [(ngModel)]="content"
+          name="content"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        {{ editMode ? 'Update Post' : 'Add Post' }}
+      </button>
+    </form>
+  
+    <hr />
+    
+    <div *ngFor="let post of posts" class="card my-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content }}</p>
+        <button class="btn btn-warning me-2" (click)="onEditPost(post)">Edit</button>
+        <button class="btn btn-danger" (click)="onDeletePost(post.postId)">Delete</button>
+      </div>
+    </div>
+  </div>
+  

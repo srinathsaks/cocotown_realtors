@@ -8,6 +8,6 @@ import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(RouterModule.forRoot(routes)), // Setup routing
+    importProvidersFrom(RouterModule.forRoot(routes)), 
   ],
 });
